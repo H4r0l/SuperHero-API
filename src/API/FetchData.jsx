@@ -30,7 +30,7 @@ export const fetchData = () => async (dispatch, getState) => {
       );
       const responses = await Promise.all(requests);
       const requestData = responses.map((response) => response.data);
-      allData.push(...requestData); // Add the current batch of heroes to allData
+      allData.push(...requestData); // Add the current request of heroes to allData
     }
     // Save data in localStorage
     localStorage.setItem(localStorageKey, JSON.stringify(allData));
